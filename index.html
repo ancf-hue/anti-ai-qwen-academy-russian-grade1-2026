@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<title>Анти-ИИ Квен Академия | Русский язык для иностранцев • 1 класс 2026</title>
+<meta name="description" content="Полный тренажёр для тестирования иностранных граждан по русскому языку при поступлении в 1 класс. Демо-вариант 2026. RU / EN / UZ." />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<style>
+  * { box-sizing: border-box; }
+  :root, [data-theme="dark"] {
+    --bg: #1a0505;
+    --bg-grad1: rgba(239, 68, 68, 0.2);
+    --bg-grad2: rgba(220, 38, 38, 0.15);
+    --card: rgba(40, 10, 10, 0.85);
+    --card-soft: rgba(239, 68, 68, 0.08);
+    --border: rgba(239, 68, 68, 0.3);
+    --border-strong: rgba(239, 68, 68, 0.6);
+    --text: #fee2e2;
+    --text-soft: #fecaca;
+    --muted: #fca5a5;
+    --accent: #ef4444;
+    --accent2: #dc2626;
+    --accent-text: #450a0a;
+    --light-red: rgba(239, 68, 68, 0.15);
+    --red: #ef4444;
+    --orange: #f59e0b;
+    --green: #10b981;
+    --green-light: rgba(16, 185, 129, 0.2);
+    --green-border: rgba(16, 185, 129, 0.5);
+    --shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+    --header-bg: rgba(26, 5, 5, 0.95);
+  }
+  [data-theme="light"] {
+    --bg: #fef2f2;
+    --bg-grad1: rgba(239, 68, 68, 0.1);
+    --bg-grad2: rgba(220, 38, 38, 0.05);
+    --card: #ffffff;
+    --card-soft: #fff1f2;
+    --border: #fecaca;
+    --border-strong: #ef4444;
+    --text: #7f1d1d;
+    --text-soft: #991b1b;
+    --muted: #b91c1c;
+    --accent: #dc2626;
+    --accent2: #b91c1c;
+    --accent-text: #ffffff;
+    --light-red: #fee2e2;
+    --red: #dc2626;
+    --orange: #d97706;
+    --green: #059669;
+    --green-light: #d1fae5;
+    --green-border: #6ee7b7;
+    --shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+    --header-bg: rgba(255, 255, 255, 0.95);
+  }
+  body { margin: 0; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    background: radial-gradient(circle at top left,var(--bg-grad1),transparent 30%),
+                radial-gradient(circle at top right,var(--bg-grad2),transparent 28%),var(--bg);
+    color: var(--text); line-height: 1.55; min-height: 100vh; transition: background-color 0.3s, color 0.3s; }
+  .container { width: min(1120px, 92%); margin: 0 auto; }
+  header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px);
+    background: var(--header-bg); border-bottom: 1px solid var(--border); }
+  .topbar { display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 14px 0; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-logo { width: 46px; height: 46px; border-radius: 15px; object-fit: cover;
+    background: var(--light-red); border: 1px solid var(--border-strong); flex: 0 0 auto; }
+  .brand strong { display: block; font-size: 16px; line-height: 1.2; }
+  .brand small { color: var(--muted); font-size: 12px; }
+  nav { display: flex; gap: 18px; flex-wrap: wrap; }
+  nav a { color: var(--text-soft); text-decoration: none; font-weight: 700; font-size: 14px; transition: color 0.2s; }
+  nav a:hover { color: var(--accent); }
+  .top-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+  .icon-btn { display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid var(--border-strong); background: var(--light-red);
+    color: var(--muted); border-radius: 999px; padding: 8px 12px;
+    font-weight: 850; cursor: pointer; font-size: 13px; }
+  .icon-btn:hover { background: var(--card-soft); color: var(--accent); }
+  .lang-option { opacity: .6; }
+  .lang-option.active { opacity: 1; color: var(--accent); }
+  .timer-widget { display: flex; align-items: center; gap: 6px;
+    background: var(--light-red); border: 1px solid var(--border-strong);
+    border-radius: 14px; padding: 6px 8px; }
+  #timerDisplay { font-variant-numeric: tabular-nums; font-weight: 900;
+    min-width: 84px; text-align: center; font-size: 13px; }
+  .timer-btn { border: 0; background: var(--card-soft); color: var(--text);
+    border-radius: 10px; padding: 6px 9px; cursor: pointer; font-size: 14px; }
+  .timer-btn:hover { background: var(--light-red); }
+  .timer-widget.warning #timerDisplay { color: var(--orange); }
+  .timer-widget.danger #timerDisplay { color: var(--red); animation: pulse 1s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+  .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 24px;
+    padding: 48px 0 28px; align-items: start; }
+  .badge { display: inline-flex; align-items: center; padding: 8px 12px;
+    border-radius: 999px; background: var(--light-red); border: 1px solid var(--border-strong);
+    color: var(--accent); font-size: 13px; font-weight: 700; }
+  h1 { font-size: clamp(30px, 4.5vw, 50px); line-height: 1.05; margin: 16px 0; }
+  h1 .accent { color: var(--accent); }
+  .lead { color: var(--text-soft); max-width: 72ch; font-size: 17px; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+  .btn { border: 0; border-radius: 14px; padding: 14px 18px; font-weight: 850;
+    cursor: pointer; background: linear-gradient(135deg,var(--accent2),var(--accent));
+    color: var(--accent-text); box-shadow: 0 12px 30px rgba(239,68,68,.25); font-size: 15px; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn.secondary { background: var(--light-red); border: 1px solid var(--border-strong);
+    color: var(--text); box-shadow: none; }
+  .btn.small { padding: 10px 14px; font-size: 14px; border-radius: 12px; }
+  .panel { background: var(--card); border: 1px solid var(--border-strong);
+    border-radius: 24px; padding: 22px; box-shadow: var(--shadow); }
+  .panel h3 { margin: 0 0 14px; font-size: 20px; }
+  .metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 18px 0; }
+  .metric { background: var(--light-red); border-radius: 16px; padding: 14px;
+    border: 1px solid var(--border); min-height: 82px; }
+  .metric strong { display: block; font-size: 22px; margin-bottom: 4px; }
+  .metric span { color: var(--muted); font-size: 12px; }
+  progress { width: 100%; height: 10px; border-radius: 999px; overflow: hidden;
+    appearance: none; background: var(--light-red); border: none; margin-top: 10px; }
+  progress::-webkit-progress-bar { background: var(--light-red); border-radius: 999px; }
+  progress::-webkit-progress-value { background: linear-gradient(90deg,var(--accent2),var(--accent)); border-radius: 999px; }
+  progress::-moz-progress-bar { background: var(--accent); border-radius: 999px; }
+  .note { color: var(--muted); font-size: 13px; margin-top: 12px; }
+  section { padding: 28px 0; }
+  .section-head { display: flex; justify-content: space-between; align-items: end;
+    gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+  h2 { font-size: clamp(24px,3vw,34px); margin: 0; line-height: 1.15; }
+  .sub { color: var(--muted); margin: 6px 0 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(245px,1fr)); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--border);
+    border-radius: 22px; padding: 20px; box-shadow: var(--shadow); }
+  .card h3 { margin: 0 0 10px; font-size: 20px; }
+  .card p { color: var(--text-soft); margin: 0 0 16px; }
+  .warn-card { border-color: rgba(245,158,11,.4); }
+  .danger-card { border-color: rgba(239,68,68,.4); }
+  .success-card { border-color: var(--green-border); }
+  .tag { display: inline-block; padding: 6px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 850; margin-bottom: 10px;
+    background: var(--light-red); border: 1px solid var(--border-strong); color: var(--accent); }
+  .tag.red { background: rgba(239,68,68,.14); border-color: rgba(239,68,68,.4); color: var(--red); }
+  .tag.green { background: var(--green-light); border-color: var(--green-border); color: var(--green); }
+  .tag.orange { background: rgba(245,158,11,.14); border-color: rgba(245,158,11,.4); color: var(--orange); }
+  .mini-list { margin: 0; padding-left: 18px; color: var(--text-soft); font-size: 14px; }
+  .mini-list li { margin: 7px 0; }
+  .topic-card { display: flex; flex-direction: column; }
+  .topic-card button { margin-top: auto; align-self: flex-start; }
+  .topic-card.studied { border-color: var(--accent); background: var(--light-red); }
+  .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;
+    padding: 14px; background: var(--card-soft); border: 1px solid var(--border);
+    border-radius: 16px; align-items: center; }
+  .filter-bar > span { color: var(--muted); font-size: 13px; font-weight: 700; margin-right: 6px; }
+  .filter-btn { padding: 8px 14px; border-radius: 10px; border: 1px solid var(--border-strong);
+    background: var(--light-red); color: var(--text); cursor: pointer;
+    font-size: 13px; font-weight: 700; }
+  .filter-btn:hover { background: var(--card-soft); }
+  .filter-btn.active { background: linear-gradient(135deg,var(--accent2),var(--accent));
+    border-color: transparent; color: var(--accent-text); }
+  .task-block { background: var(--card); border: 1px solid var(--border);
+    border-radius: 24px; padding: 24px; margin-bottom: 26px; box-shadow: var(--shadow); }
+  .task-number { display: inline-block; padding: 6px 12px; border-radius: 999px;
+    background: var(--light-red); border: 1px solid var(--border-strong);
+    color: var(--accent); font-size: 13px; font-weight: 850; margin-bottom: 14px; }
+  .task-label { display: inline-block; font-size: 12px; font-weight: 900;
+    text-transform: uppercase; letter-spacing: .5px; color: var(--accent); margin-bottom: 8px; }
+  .task-text { font-size: 16px; font-weight: 700; margin: 0 0 12px; line-height: 1.5; white-space: pre-wrap; }
+  .task-info { background: var(--light-red); border-left: 4px solid var(--accent);
+    border-radius: 0 14px 14px 0; padding: 16px 18px; margin: 18px 0;
+    color: var(--text-soft); font-size: 15px; line-height: 1.55; white-space: pre-wrap; }
+  .self-check { margin-top: 12px; padding: 12px 14px; border-radius: 14px;
+    background: var(--card-soft); border: 1px solid var(--border); }
+  .self-check .score-label { display: block; font-size: 13px; font-weight: 700;
+    color: var(--muted); margin-bottom: 8px; }
+  .score-row { display: flex; align-items: center; gap: 8px; padding: 6px 0;
+    font-size: 14px; color: var(--text-soft); }
+  .score-row input[type="radio"] { accent-color: var(--accent); width: 18px; height: 18px; cursor: pointer; }
+  .score-row label { cursor: pointer; }
+  .task-total { margin-top: 10px; padding: 10px 14px; border-radius: 12px;
+    background: var(--light-red); border: 1px solid var(--border-strong);
+    font-weight: 800; color: var(--accent); font-size: 15px; text-align: center; }
+  .summary-box { margin-top: 24px; padding: 24px; border-radius: 24px;
+    background: var(--light-red); border: 1px solid var(--border-strong); text-align: center; }
+  .summary-box .score { font-size: 48px; font-weight: 950; color: var(--accent); }
+  .reset-bar { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; justify-content: flex-end; }
+  .checklist { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .check-item { display: flex; gap: 12px; align-items: flex-start;
+    background: var(--card-soft); border: 1px solid var(--border);
+    border-radius: 16px; padding: 14px; }
+  .check-item input { width: 20px; height: 20px; margin-top: 3px; accent-color: var(--accent); }
+  .check-item label { cursor: pointer; color: var(--text-soft); font-size: 15px; }
+  .check-item.done { opacity: .75; background: var(--light-red); border-color: var(--border-strong); }
+  .check-item.done label { text-decoration: line-through; color: var(--muted); }
+  .plan-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; }
+  .day { background: var(--card-soft); border: 1px solid var(--border);
+    border-radius: 18px; padding: 16px; min-height: 112px; position: relative; }
+  .day::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--accent); border-radius: 18px 0 0 18px; }
+  .day b { display: block; color: var(--accent); margin-bottom: 6px; font-size: 14px; }
+  .day p { margin: 0; color: var(--text-soft); font-size: 14px; }
+  .day.critical { border-color: rgba(239,68,68,.4); background: rgba(239,68,68,.08); }
+  .day.critical::before { background: var(--red); }
+  .support-card { background: var(--card); border: 1px solid var(--border-strong);
+    border-radius: 24px; padding: 24px; box-shadow: var(--shadow); text-align: center; }
+  .support-card h2 { margin-bottom: 10px; }
+  .support-card p { margin: 10px 0; color: var(--text-soft); }
+  .phone { color: var(--accent); font-weight: 900; text-decoration: none;
+    border-bottom: 1px dashed var(--accent); }
+  .copy-status { margin-left: 8px; color: var(--accent); font-weight: 850; }
+  footer { padding: 30px 0 50px; color: var(--muted); text-align: center;
+    border-top: 1px solid var(--border); margin-top: 30px; }
+  .reference-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13px; }
+  .reference-table th, .reference-table td { border: 1px solid var(--border);
+    padding: 6px; text-align: left; }
+  .reference-table th { background: var(--light-red); color: var(--accent); }
+  .criteria-block { background: var(--card-soft); border: 1px solid var(--border);
+    border-radius: 14px; padding: 14px 16px; margin-top: 14px;
+    font-size: 13px; color: var(--text-soft); line-height: 1.6; }
+  .criteria-block strong { color: var(--accent); display: block; margin-bottom: 6px; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .metrics { grid-template-columns: 1fr; }
+    nav { gap: 12px; }
+    .top-controls { width: 100%; justify-content: space-between; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container topbar">
+    <div class="brand">
+      <img src="favicon.ico" class="brand-logo" alt="Anti-AI Qwen Academy" onerror="this.style.display='none'" />
+      <div>
+        <strong data-i18n="brandTitle">Анти-ИИ Квен Академия</strong>
+        <small data-i18n="brandSub">Русский язык для иностранцев • 1 класс • 2026</small>
+      </div>
+    </div>
+    <nav>
+      <a href="#structure" data-i18n="navStructure">Структура</a>
+      <a href="#topics" data-i18n="navTopics">Разделы</a>
+      <a href="#trainer" data-i18n="navTrainer">Тренажёр</a>
+      <a href="#references" data-i18n="navRefs">Справочник</a>
+      <a href="#checklist" data-i18n="navChecklist">Чек-лист</a>
+      <a href="#plan" data-i18n="navPlan">План</a>
+      <a href="#support" data-i18n="navSupport">Поддержать</a>
+    </nav>
+    <div class="top-controls">
+      <button id="themeToggle" class="icon-btn" type="button">
+        <span id="themeIcon">🌙</span>
+      </button>
+      <button id="langToggle" class="icon-btn" type="button" title="RU / EN / UZ">
+        <span class="lang-option active" data-lang="ru">RU</span>
+        <span>/</span>
+        <span class="lang-option" data-lang="en">EN</span>
+        <span>/</span>
+        <span class="lang-option" data-lang="uz">UZ</span>
+      </button>
+      <div class="timer-widget" id="timerWidget" role="group">
+        <span id="timerDisplay">15:00</span>
+        <button id="timerToggle" class="timer-btn" type="button">▶</button>
+        <button id="timerReset" class="timer-btn" type="button">↺</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div>
+      <span class="badge" data-i18n="badge">Бесплатно • HTML • Тестирование в 1 класс • 2026</span>
+      <h1 data-i18n="h1">Тестирование по <span class="accent">русскому языку</span> для поступающих в 1 класс</h1>
+      <p class="lead" data-i18n="lead">
+        Диагностические материалы для иностранных граждан и лиц без гражданства.
+        4 задания: диалог, монолог, слушание, лексика и грамматика. Максимум — 10 баллов, минимум для прохождения — 9.
+      </p>
+      <div class="actions">
+        <button class="btn" onclick="scrollToId('trainer')" data-i18n="actionTrainer">Пройти тест</button>
+        <button class="btn secondary" onclick="scrollToId('references')" data-i18n="actionRefs">Критерии и правила</button>
+      </div>
+    </div>
+    <aside class="panel">
+      <h3 data-i18n="quickStats">Твой прогресс</h3>
+      <div class="metrics">
+        <div class="metric">
+          <strong id="answeredCount">0/4</strong>
+          <span data-i18n="metricAnswered">заданий оценено</span>
+        </div>
+        <div class="metric">
+          <strong id="totalScore">0</strong>
+          <span data-i18n="metricScore">баллов из 10</span>
+        </div>
+        <div class="metric">
+          <strong id="verdictLabel">—</strong>
+          <span data-i18n="metricVerdict">вердикт</span>
+        </div>
+      </div>
+      <progress id="overall" value="0" max="100"></progress>
+      <p class="note" data-i18n="noteReset">Ответы сбрасываются при обновлении. Чек-лист тоже сбрасывается.</p>
+    </aside>
+  </section>
+
+  <section id="structure">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="structureTitle">Структура тестирования</h2>
+        <p class="sub" data-i18n="structureSub">4 задания, устные ответы, 15 минут, максимум 10 баллов.</p>
+      </div>
+    </div>
+    <div class="grid" id="structureGrid"></div>
+  </section>
+
+  <section id="topics">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="topicsTitle">Ключевые разделы</h2>
+        <p class="sub" data-i18n="topicsSub">Отмечай разделы, которые уже повторил.</p>
+      </div>
+    </div>
+    <div class="grid" id="topicsGrid"></div>
+  </section>
+
+  <section id="trainer">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="trainerTitle">Задания теста</h2>
+        <p class="sub" data-i18n="trainerSub">4 задания с устным ответом. Оцени себя по критериям.</p>
+      </div>
+    </div>
+    <div class="reset-bar">
+      <button class="btn secondary small" onclick="resetAll()" data-i18n="resetAll">Сбросить ответы</button>
+    </div>
+    <div id="tasksContainer"></div>
+    <div id="summaryBox"></div>
+  </section>
+
+  <section id="references">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="refsTitle">Справочник и критерии</h2>
+        <p class="sub" data-i18n="refsSub">Критерии оценивания + шкалы перевода + полезные советы.</p>
+      </div>
+    </div>
+    <div class="grid" id="refsGrid"></div>
+    <div class="card" style="margin-top:16px;">
+      <h3 data-i18n="refRules">Что нужно помнить на тестировании</h3>
+      <ul class="mini-list" id="refRulesList"></ul>
+    </div>
+    <div class="card" style="margin-top:16px;">
+      <h3 data-i18n="wordsTitle">📚 Полезные слова и выражения</h3>
+      <table class="reference-table" id="wordsTable"></table>
+    </div>
+  </section>
+
+  <section id="checklist">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="checklistTitle">Чек-лист подготовки</h2>
+        <p class="sub" data-i18n="checklistSub">Прогресс не сохраняется — всё сбрасывается при обновлении.</p>
+      </div>
+    </div>
+    <ul class="checklist" id="checklistUl"></ul>
+  </section>
+
+  <section id="plan">
+    <div class="section-head">
+      <div>
+        <h2 data-i18n="planTitle">План подготовки: 14 дней</h2>
+        <p class="sub" data-i18n="planSub">Маршрут для поступающих в 1 класс.</p>
+      </div>
+    </div>
+    <div class="plan-grid" id="planGrid"></div>
+  </section>
+
+  <section id="support">
+    <div class="support-card">
+      <h2 data-i18n="supportTitle">🤝 ПОДДЕРЖАТЬ ПРОЕКТ ❤️</h2>
+      <p data-i18n="supportP1"><strong>Приложение бесплатное. Было и останется.</strong></p>
+      <p data-i18n="supportP2">Все приложения бесплатны и без рекламы. Ваша помощь развивает офлайн-безопасность и образование.</p>
+      <p>
+        <span data-i18n="supportPhoneLabel">📱 ПЕРЕВОД ПО НОМЕРУ:</span>
+        <a class="phone" href="tel:89202275676">8-920-227-56-76</a>
+        <button class="btn small" onclick="copyPhone()" data-i18n="copyPhone">📋 Копировать</button>
+        <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+      </p>
+      <p data-i18n="supportP3">✅ Мгновенно. Без комиссии. Безопасно.</p>
+      <p data-i18n="supportP4">❤️ Спасибо за поддержку!</p>
+      <p>🌟 👉 <a href="https://ancf-hue.github.io/" target="_blank" rel="noopener noreferrer" class="link" style="color:var(--accent);font-weight:800;text-decoration:none;" data-i18n="supportCatalog">Каталог офлайн-приложений Anti-AI Shield</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container" data-i18n="footer">
+    Анти-ИИ Квен Академия • Бесплатный HTML-проект • Русский язык для иностранцев • 1 класс • 2026
+  </div>
+</footer>
+
+<script>
+const STORAGE = {
+  theme: "antiIqwenRusForeign1_2026_theme",
+  lang: "antiIqwenRusForeign1_2026_lang"
+};
+
+const LANGS = ["ru", "en", "uz"];
+
+const I18N = {
+  ru: {
+    docTitle: "Анти-ИИ Квен Академия | Русский язык для иностранцев • 1 класс 2026",
+    brandTitle: "Анти-ИИ Квен Академия",
+    brandSub: "Русский язык для иностранцев • 1 класс • 2026",
+    navStructure: "Структура", navTopics: "Разделы", navTrainer: "Тренажёр",
+    navRefs: "Справочник", navChecklist: "Чек-лист", navPlan: "План", navSupport: "Поддержать",
+    badge: "Бесплатно • HTML • Тестирование в 1 класс • 2026",
+    h1: 'Тестирование по <span class="accent">русскому языку</span> для поступающих в 1 класс',
+    lead: "Диагностические материалы для иностранных граждан и лиц без гражданства. 4 задания: диалог, монолог, слушание, лексика и грамматика. Максимум — 10 баллов, минимум для прохождения — 9.",
+    actionTrainer: "Пройти тест", actionRefs: "Критерии и правила",
+    quickStats: "Твой прогресс",
+    metricAnswered: "заданий оценено", metricScore: "баллов из 10", metricVerdict: "вердикт",
+    noteReset: "Ответы сбрасываются при обновлении. Чек-лист тоже сбрасывается.",
+    structureTitle: "Структура тестирования",
+    structureSub: "4 задания, устные ответы, 15 минут, максимум 10 баллов.",
+    topicsTitle: "Ключевые разделы", topicsSub: "Отмечай разделы, которые уже повторил.",
+    trainerTitle: "Задания теста",
+    trainerSub: "4 задания с устным ответом. Оцени себя по критериям.",
+    resetAll: "Сбросить ответы",
+    refsTitle: "Справочник и критерии",
+    refsSub: "Критерии оценивания + шкалы перевода + полезные советы.",
+    refRules: "Что нужно помнить на тестировании",
+    checklistTitle: "Чек-лист подготовки", checklistSub: "Прогресс не сохраняется — всё сбрасывается при обновлении.",
+    planTitle: "План подготовки: 14 дней", planSub: "Маршрут для поступающих в 1 класс.", dayPrefix: "День",
+    supportTitle: "🤝 ПОДДЕРЖАТЬ ПРОЕКТ ❤️",
+    supportP1: "<strong>Приложение бесплатное. Было и останется.</strong>",
+    supportP2: "Все приложения бесплатны и без рекламы. Ваша помощь развивает офлайн-безопасность и образование.",
+    supportPhoneLabel: "📱 ПЕРЕВОД ПО НОМЕРУ:", copyPhone: "📋 Копировать", copied: "✓ Скопировано",
+    supportP3: "✅ Мгновенно. Без комиссии. Безопасно.", supportP4: "❤️ Спасибо за поддержку!",
+    supportCatalog: "Каталог офлайн-приложений Anti-AI Shield",
+    footer: "Анти-ИИ Квен Академия • Бесплатный HTML-проект • Русский язык для иностранцев • 1 класс • 2026",
+    selfScoreLabel: "Самооценка по критериям:",
+    taskTotal: "Итог за задание",
+    summaryProgress: "Оценено заданий",
+    summaryScale: "Минимум для прохождения — 9 из 10 баллов.",
+    verdictPass: "✅ Тест пройден!",
+    verdictFail: "❌ Тест не пройден.",
+    verdictWait: "Оцени все задания, чтобы увидеть итог.",
+    timerUp: "Время вышло!",
+    timerStart: "Запустить", timerPause: "Пауза", timerReset: "Сброс",
+    scoreYes: "1 — верно",
+    scoreNo: "0 — неверно",
+    // rules
+    rule1: "<strong>Не бойся!</strong> Это просто проверка того, как ты говоришь по-русски.",
+    rule2: "<strong>Слушай внимательно:</strong> Задания читают на русском языке.",
+    rule3: "<strong>Отвечай полными предложениями:</strong> Где можешь — не одним словом.",
+    rule4: "<strong>Если не знаешь:</strong> Скажи «Не знаю» — это лучше, чем молчать.",
+    rule5: "<strong>Устная часть:</strong> Старайся говорить чётко и не спеша.",
+    // references
+    refCriteriaTitle: "Критерии оценивания (всего 10 баллов)",
+    refTask: "Задание", refMaxScore: "Макс. балл", refTotal: "Итого",
+    refDialog: "1. Диалог (Д1 + Д2)",
+    refMono: "2. Монолог (М1 + М2 + М3)",
+    refListen: "3. Слушание (С1 + С2)",
+    refVocab: "4. Лексика и грамматика (ЛГ1 + ЛГ2 + ЛГ3)",
+    refScaleTitle: "Итоговая шкала",
+    refScore: "Балл", refResult: "Результат",
+    refPass: "✅ Тест пройден (достаточно для обучения)",
+    refFail: "❌ Тест не пройден (требуется подготовка)",
+    refDistTitle: "Распределение по разделам",
+    refSection: "Раздел", refTaskCol: "Задание",
+    refSpeaking: "Говорение", refSpeakingTasks: "1 (диалог), 2 (монолог)",
+    refListening: "Слушание", refListeningTask: "3",
+    refVocabSection: "Лексика и грамматика", refVocabTask: "4",
+    // words
+    wordsTitle: "📚 Полезные слова и выражения",
+    wordsTopic: "Тема", wordsExamples: "Примеры",
+    wordsFamily: "Семья", wordsHouse: "Дом", wordsClothes: "Одежда", wordsFood: "Еда",
+    wordsAnimals: "Животные", wordsColors: "Цвета", wordsFeatures: "Признаки",
+    // topic button
+    markTopic: "Отметить",
+    studiedLabel: "✓ Изучено",
+    taskWord: "Задание", maxWord: "макс.", pointsWord: "балла"
+  },
+  en: {
+    docTitle: "Anti-AI Qwen Academy | Russian for Foreigners • Grade 1 2026",
+    brandTitle: "Anti-AI Qwen Academy",
+    brandSub: "Russian for Foreigners • Grade 1 • 2026",
+    navStructure: "Structure", navTopics: "Sections", navTrainer: "Trainer",
+    navRefs: "References", navChecklist: "Checklist", navPlan: "Plan", navSupport: "Support",
+    badge: "Free • HTML • Grade 1 Test • 2026",
+    h1: 'Russian <span class="accent">language testing</span> for Grade 1 applicants',
+    lead: "Diagnostic materials for foreign citizens. 4 tasks: dialogue, monologue, listening, vocabulary and grammar. Max — 10 points, minimum to pass — 9.",
+    actionTrainer: "Start test", actionRefs: "Criteria & rules",
+    quickStats: "Your progress",
+    metricAnswered: "tasks assessed", metricScore: "points of 10", metricVerdict: "verdict",
+    noteReset: "Answers reset on reload. Checklist also resets.",
+    structureTitle: "Test structure",
+    structureSub: "4 tasks, oral answers, 15 minutes, max 10 points.",
+    topicsTitle: "Key sections", topicsSub: "Mark sections you've reviewed.",
+    trainerTitle: "Test tasks",
+    trainerSub: "4 oral response tasks. Self-assess by criteria.",
+    resetAll: "Reset answers",
+    refsTitle: "Reference & criteria",
+    refsSub: "Criteria + scales + useful tips.",
+    refRules: "What to remember during the test",
+    checklistTitle: "Preparation checklist", checklistSub: "Progress is not saved — everything resets on reload.",
+    planTitle: "14-day preparation plan", planSub: "Route for Grade 1 applicants.", dayPrefix: "Day",
+    supportTitle: "🤝 SUPPORT THE PROJECT ❤️",
+    supportP1: "<strong>The app is free.</strong>",
+    supportP2: "All apps are free and ad-free.",
+    supportPhoneLabel: "📱 TRANSFER BY PHONE:", copyPhone: "📋 Copy", copied: "✓ Copied",
+    supportP3: "✅ Instantly. No commission.", supportP4: "❤️ Thanks!",
+    supportCatalog: "Anti-AI Shield offline apps catalog",
+    footer: "Anti-AI Qwen Academy • Free HTML project • Russian for Foreigners • Grade 1 • 2026",
+    selfScoreLabel: "Self-assessment by criteria:",
+    taskTotal: "Task total",
+    summaryProgress: "Tasks assessed",
+    summaryScale: "Minimum to pass — 9 of 10 points.",
+    verdictPass: "✅ Test passed!",
+    verdictFail: "❌ Test not passed.",
+    verdictWait: "Assess all tasks to see the result.",
+    timerUp: "Time is up!",
+    timerStart: "Start", timerPause: "Pause", timerReset: "Reset",
+    scoreYes: "1 — correct",
+    scoreNo: "0 — incorrect",
+    rule1: "<strong>Don't be afraid!</strong> It's just a check of how you speak Russian.",
+    rule2: "<strong>Listen carefully:</strong> Tasks are read in Russian.",
+    rule3: "<strong>Answer in full sentences:</strong> Where you can — not in one word.",
+    rule4: "<strong>If you don't know:</strong> Say «I don't know» — better than silence.",
+    rule5: "<strong>Oral part:</strong> Speak clearly and slowly.",
+    refCriteriaTitle: "Scoring criteria (total 10 points)",
+    refTask: "Task", refMaxScore: "Max score", refTotal: "Total",
+    refDialog: "1. Dialogue (D1 + D2)",
+    refMono: "2. Monologue (M1 + M2 + M3)",
+    refListen: "3. Listening (S1 + S2)",
+    refVocab: "4. Vocabulary & grammar (LG1 + LG2 + LG3)",
+    refScaleTitle: "Final scale",
+    refScore: "Score", refResult: "Result",
+    refPass: "✅ Test passed (sufficient for enrolment)",
+    refFail: "❌ Test not passed (preparation required)",
+    refDistTitle: "Distribution by sections",
+    refSection: "Section", refTaskCol: "Task",
+    refSpeaking: "Speaking", refSpeakingTasks: "1 (dialogue), 2 (monologue)",
+    refListening: "Listening", refListeningTask: "3",
+    refVocabSection: "Vocabulary & grammar", refVocabTask: "4",
+    wordsTitle: "📚 Useful words and expressions",
+    wordsTopic: "Topic", wordsExamples: "Examples",
+    wordsFamily: "Family", wordsHouse: "House", wordsClothes: "Clothes", wordsFood: "Food",
+    wordsAnimals: "Animals", wordsColors: "Colors", wordsFeatures: "Features",
+    markTopic: "Mark",
+    studiedLabel: "✓ Studied",
+    taskWord: "Task", maxWord: "max", pointsWord: "points"
+  },
+  uz: {
+    docTitle: "Anti-AI Qwen Akademiyasi | Chet elliklar uchun rus tili • 1-sinf 2026",
+    brandTitle: "Anti-AI Qwen Akademiyasi",
+    brandSub: "Chet elliklar uchun rus tili • 1-sinf • 2026",
+    navStructure: "Tuzilish", navTopics: "Bo'limlar", navTrainer: "Mashq",
+    navRefs: "Ma'lumotnoma", navChecklist: "Cheklist", navPlan: "Reja", navSupport: "Qo'llab-quvvatlash",
+    badge: "Bepul • HTML • 1-sinfga test • 2026",
+    h1: '1-sinfga kiruvchilar uchun <span class="accent">rus tili</span> test sinovi',
+    lead: "Chet el fuqarolari va fuqaroligi bo'lmagan shaxslar uchun diagnostik materiallar. 4 ta topshiriq: dialog, monolog, tinglash, leksika va grammatika. Maksimal — 10 ball, o'tish uchun minimal — 9.",
+    actionTrainer: "Testni boshlash", actionRefs: "Mezonlar va qoidalar",
+    quickStats: "Sening natijang",
+    metricAnswered: "topshiriq baholandi", metricScore: "balldan 10 dan", metricVerdict: "xulosa",
+    noteReset: "Javoblar yangilanganda tozalanadi. Cheklist ham tozalanadi.",
+    structureTitle: "Test tuzilishi",
+    structureSub: "4 ta topshiriq, og'zaki javoblar, 15 daqiqa, maksimal 10 ball.",
+    topicsTitle: "Asosiy bo'limlar", topicsSub: "Takrorlagan bo'limlaringizni belgilang.",
+    trainerTitle: "Test topshiriqlari",
+    trainerSub: "4 ta og'zaki javob topshirig'i. Mezonlar bo'yicha o'zingizni baholang.",
+    resetAll: "Javoblarni tozalash",
+    refsTitle: "Ma'lumotnoma va mezonlar",
+    refsSub: "Baholash mezonlari + shkalalar + foydali maslahatlar.",
+    refRules: "Test paytida nimalarni yodda tutish kerak",
+    checklistTitle: "Tayyorgarlik cheklisti", checklistSub: "Natija saqlanmaydi — yangilanganda hammasi tozalanadi.",
+    planTitle: "14 kunlik tayyorgarlik rejasi", planSub: "1-sinfga kiruvchilar uchun yo'l xaritasi.", dayPrefix: "Kun",
+    supportTitle: "🤝 LOYIHANI QO'LLAB-QUVVATLASH ❤️",
+    supportP1: "<strong>Ilova bepul. Shunday bo'lib qoladi.</strong>",
+    supportP2: "Barcha ilovalar bepul va reklamasiz. Sizning yordamingiz oflayn xavfsizlik va ta'limni rivojlantiradi.",
+    supportPhoneLabel: "📱 RAQAMGA O'TKAZMA:", copyPhone: "📋 Nusxalash", copied: "✓ Nusxalandi",
+    supportP3: "✅ Bir zumda. Komissiyasiz. Xavfsiz.", supportP4: "❤️ Qo'llab-quvvatlaganingiz uchun rahmat!",
+    supportCatalog: "Anti-AI Shield oflayn ilovalar katalogi",
+    footer: "Anti-AI Qwen Akademiyasi • Bepul HTML loyiha • Chet elliklar uchun rus tili • 1-sinf • 2026",
+    selfScoreLabel: "Mezonlar bo'yicha o'z-o'zini baholash:",
+    taskTotal: "Topshiriq uchun jami",
+    summaryProgress: "Baholangan topshiriqlar",
+    summaryScale: "O'tish uchun minimal — 10 balldan 9.",
+    verdictPass: "✅ Test o'tildi!",
+    verdictFail: "❌ Test o'tilmadi.",
+    verdictWait: "Yakunni ko'rish uchun barcha topshiriqlarni baholang.",
+    timerUp: "Vaqt tugadi!",
+    timerStart: "Boshlash", timerPause: "To'xtatish", timerReset: "Qayta tiklash",
+    scoreYes: "1 — to'g'ri",
+    scoreNo: "0 — noto'g'ri",
+    rule1: "<strong>Qo'rqma!</strong> Bu faqat rus tilida qanday gapirishingni tekshirish.",
+    rule2: "<strong>Diqqat bilan tinglang:</strong> Topshiriqlar rus tilida o'qiladi.",
+    rule3: "<strong>To'liq gaplar bilan javob bering:</strong> Imkoni bo'lsa — bir so'z bilan emas.",
+    rule4: "<strong>Agar bilmasangiz:</strong> «Bilmayman» deng — jim turishdan yaxshiroq.",
+    rule5: "<strong>Og'zaki qism:</strong> Aniq va shoshilmasdan gapirishga harakat qiling.",
+    refCriteriaTitle: "Baholash mezonlari (jami 10 ball)",
+    refTask: "Topshiriq", refMaxScore: "Maks. ball", refTotal: "Jami",
+    refDialog: "1. Dialog (D1 + D2)",
+    refMono: "2. Monolog (M1 + M2 + M3)",
+    refListen: "3. Tinglash (S1 + S2)",
+    refVocab: "4. Leksika va grammatika (LG1 + LG2 + LG3)",
+    refScaleTitle: "Yakuniy shkala",
+    refScore: "Ball", refResult: "Natija",
+    refPass: "✅ Test o'tildi (o'qish uchun yetarli)",
+    refFail: "❌ Test o'tilmadi (tayyorgarlik kerak)",
+    refDistTitle: "Bo'limlar bo'yicha taqsimot",
+    refSection: "Bo'lim", refTaskCol: "Topshiriq",
+    refSpeaking: "Gapirish", refSpeakingTasks: "1 (dialog), 2 (monolog)",
+    refListening: "Tinglash", refListeningTask: "3",
+    refVocabSection: "Leksika va grammatika", refVocabTask: "4",
+    wordsTitle: "📚 Foydali so'zlar va iboralar",
+    wordsTopic: "Mavzu", wordsExamples: "Misollar",
+    wordsFamily: "Oila", wordsHouse: "Uy", wordsClothes: "Kiyim", wordsFood: "Ovqat",
+    wordsAnimals: "Hayvonlar", wordsColors: "Ranglar", wordsFeatures: "Belgilar",
+    markTopic: "Belgilash",
+    studiedLabel: "✓ O'rganildi",
+    taskWord: "Topshiriq", maxWord: "maks.", pointsWord: "ball"
+  }
+};
+
+let currentLang = localStorage.getItem(STORAGE.lang) || "ru";
+if (!LANGS.includes(currentLang)) currentLang = "ru";
+let currentTheme = localStorage.getItem(STORAGE.theme) || "dark";
+let topicsState = {};
+let checklistState = {};
+
+function loc(obj) { return obj && obj[currentLang] !== undefined ? obj[currentLang] : ""; }
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[m]));
+}
+function scrollToId(id) { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+
+function saveAll() { /* сброс при перезагрузке */ }
+function loadAll() { topicsState = {}; checklistState = {}; }
+
+function applyTheme() {
+  document.documentElement.setAttribute("data-theme", currentTheme);
+  const icon = document.getElementById("themeIcon");
+  if (icon) icon.textContent = currentTheme === "dark" ? "🌙" : "☀️";
+}
+function toggleTheme() {
+  currentTheme = currentTheme === "dark" ? "light" : "dark";
+  localStorage.setItem(STORAGE.theme, currentTheme);
+  applyTheme();
+}
+
+/* CONTENT */
+const structureCards = [
+  { cardClass: "success-card", tagClass: "green",
+    tag: { ru: "Задание 1", en: "Task 1", uz: "1-topshiriq" },
+    title: { ru: "Диалог (2 балла)", en: "Dialogue (2 points)", uz: "Dialog (2 ball)" },
+    items: [
+      { ru: "Ответы на 2 вопроса о себе.", en: "Answers to 2 questions about yourself.", uz: "O'zingiz haqingizda 2 ta savolga javoblar." },
+      { ru: "Например: сколько лет, где живёшь.", en: "Example: age, where you live.", uz: "Masalan: necha yoshda, qayerda yashaysiz." },
+      { ru: "Допускаются односложные ответы.", en: "One-word answers allowed.", uz: "Bir so'zli javoblarga ruxsat beriladi." }
+    ]
+  },
+  { cardClass: "success-card", tagClass: "green",
+    tag: { ru: "Задание 2", en: "Task 2", uz: "2-topshiriq" },
+    title: { ru: "Монолог по фото (3 балла)", en: "Monologue by photo (3 points)", uz: "Surat bo'yicha monolog (3 ball)" },
+    items: [
+      { ru: "3 вопроса по фотографии.", en: "3 questions about the photo.", uz: "Surat bo'yicha 3 ta savol." },
+      { ru: "Кто? Что делают? Какое настроение?", en: "Who? What are they doing? Mood?", uz: "Kim? Nima qilishyapti? Kayfiyati qanday?" },
+      { ru: "Подготовка — 2 минуты.", en: "Preparation — 2 minutes.", uz: "Tayyorgarlik — 2 daqiqa." }
+    ]
+  },
+  { cardClass: "success-card", tagClass: "green",
+    tag: { ru: "Задание 3", en: "Task 3", uz: "3-topshiriq" },
+    title: { ru: "Слушание (2 балла)", en: "Listening (2 points)", uz: "Tinglash (2 ball)" },
+    items: [
+      { ru: "Текст 19 слов читается дважды.", en: "19-word text read twice.", uz: "19 so'zli matn ikki marta o'qiladi." },
+      { ru: "2 вопроса по тексту.", en: "2 questions on the text.", uz: "Matn bo'yicha 2 ta savol." },
+      { ru: "Текст о правилах дорожного движения.", en: "Text about traffic rules.", uz: "Yo'l harakati qoidalari haqidagi matn." }
+    ]
+  },
+  { cardClass: "success-card", tagClass: "green",
+    tag: { ru: "Задание 4", en: "Task 4", uz: "4-topshiriq" },
+    title: { ru: "Лексика и грамматика (3 балла)", en: "Vocabulary & grammar (3 points)", uz: "Leksika va grammatika (3 ball)" },
+    items: [
+      { ru: "Назвать 3 предмета и их признаки.", en: "Name 3 objects and their features.", uz: "3 ta buyumni va ularning belgilarini nomlash." },
+      { ru: "По картинкам: стол, карандаши, рубашка.", en: "By pictures: table, pencils, shirt.", uz: "Rasmlar bo'yicha: stol, qalamlar, ko'ylak." },
+      { ru: "Модель: сущ. + прил.", en: "Model: noun + adjective.", uz: "Model: ot + sifat." }
+    ]
+  }
+];
+
+const topicsCards = [
+  { key: "dialogue", title: { ru: "Диалог", en: "Dialogue", uz: "Dialog" },
+    text: { ru: "Умение отвечать на вопросы о себе: возраст, адрес, семья.", en: "Answering questions about yourself: age, address, family.", uz: "O'zingiz haqingizda savollarga javob berish: yosh, manzil, oila." } },
+  { key: "monologue", title: { ru: "Монолог", en: "Monologue", uz: "Monolog" },
+    text: { ru: "Описание фотографии: кто, что делает, какое настроение.", en: "Describing a photo: who, what they do, mood.", uz: "Suratni tasvirlash: kim, nima qilyapti, kayfiyati qanday." } },
+  { key: "listening", title: { ru: "Слушание", en: "Listening", uz: "Tinglash" },
+    text: { ru: "Понимание короткого текста (19 слов) и ответы на 2 вопроса.", en: "Understanding a short text (19 words) and answering 2 questions.", uz: "Qisqa matnni (19 so'z) tushunish va 2 ta savolga javob berish." } },
+  { key: "vocab", title: { ru: "Лексика и грамматика", en: "Vocabulary & Grammar", uz: "Leksika va grammatika" },
+    text: { ru: "Название предметов и их признаков: существительное + прилагательное.", en: "Naming objects and their features: noun + adjective.", uz: "Buyumlarni va ularning belgilarini nomlash: ot + sifat." } }
+];
+
+const checklistItems = [
+  { key: "ch1", label: { ru: "Умею отвечать на вопрос «Сколько тебе лет?»", en: "Can answer «How old are you?»", uz: "«Necha yoshdasan?» savoliga javob bera olaman" } },
+  { key: "ch2", label: { ru: "Умею называть свой адрес", en: "Can state my address", uz: "Manzilimni ayta olaman" } },
+  { key: "ch3", label: { ru: "Могу описать фотографию (кто, что делает)", en: "Can describe a photo (who, what)", uz: "Suratni tasvirlab bera olaman (kim, nima qilyapti)" } },
+  { key: "ch4", label: { ru: "Понимаю короткий текст на слух", en: "Understand a short text by ear", uz: "Qisqa matnni quloq bilan tushunaman" } },
+  { key: "ch5", label: { ru: "Знаю слова: семья, дом, одежда, еда", en: "Know words: family, house, clothes, food", uz: "So'zlarni bilaman: oila, uy, kiyim, ovqat" } },
+  { key: "ch6", label: { ru: "Умею называть признаки предметов", en: "Can name features of objects", uz: "Buyumlarning belgilarini ayta olaman" } },
+  { key: "ch7", label: { ru: "Говорю по-русски чётко и не спеша", en: "Speak Russian clearly and slowly", uz: "Rus tilida aniq va shoshilmasdan gapiraman" } },
+  { key: "ch8", label: { ru: "Не боюсь отвечать на вопросы", en: "Not afraid to answer questions", uz: "Savollarga javob berishdan qo'rqmayman" } }
+];
+
+const planDays = [
+  { day: 1, critical: true, text: { ru: "Диагностика: попробуй пройти тест в тренажёре.", en: "Diagnostics: try the test in the trainer.", uz: "Diagnostika: trenajyorda testni sinab ko'ring." } },
+  { day: 2, critical: false, text: { ru: "Диалог: учись отвечать на вопросы о себе.", en: "Dialogue: practice answering about yourself.", uz: "Dialog: o'zingiz haqingizda savollarga javob berishni o'rganing." } },
+  { day: 3, critical: false, text: { ru: "Слова: семья, дом, возраст, адрес.", en: "Words: family, house, age, address.", uz: "So'zlar: oila, uy, yosh, manzil." } },
+  { day: 4, critical: false, text: { ru: "Монолог: описание фотографий (кто, что делает).", en: "Monologue: describing photos (who, what).", uz: "Monolog: suratlarni tasvirlash (kim, nima qilyapti)." } },
+  { day: 5, critical: false, text: { ru: "Слова: одежда, еда, животные.", en: "Words: clothes, food, animals.", uz: "So'zlar: kiyim, ovqat, hayvonlar." } },
+  { day: 6, critical: false, text: { ru: "Слушание: короткие тексты на русском.", en: "Listening: short texts in Russian.", uz: "Tinglash: rus tilidagi qisqa matnlar." } },
+  { day: 7, critical: false, text: { ru: "Слова: цвета, признаки предметов.", en: "Words: colors, features of objects.", uz: "So'zlar: ranglar, buyum belgilari." } },
+  { day: 8, critical: false, text: { ru: "Лексика: сущ. + прил. (стол — деревянный).", en: "Vocabulary: noun + adjective (table — wooden).", uz: "Leksika: ot + sifat (stol — yog'ochdan)." } },
+  { day: 9, critical: true, text: { ru: "Пробник: полный тест (15 минут).", en: "Practice: full test (15 minutes).", uz: "Sinov: to'liq test (15 daqiqa)." } },
+  { day: 10, critical: false, text: { ru: "Разбор ошибок пробника.", en: "Analyzing practice errors.", uz: "Sinov xatolarini tahlil qilish." } },
+  { day: 11, critical: false, text: { ru: "Повторение слабых тем.", en: "Reviewing weak topics.", uz: "Zaif mavzularni takrorlash." } },
+  { day: 12, critical: false, text: { ru: "Тренировка диалога и монолога.", en: "Practice dialogue and monologue.", uz: "Dialog va monolog mashqi." } },
+  { day: 13, critical: false, text: { ru: "Тренировка слушания и лексики.", en: "Practice listening and vocabulary.", uz: "Tinglash va leksika mashqi." } },
+  { day: 14, critical: false, text: { ru: "Отдых перед тестированием.", en: "Rest before the test.", uz: "Testdan oldin dam olish." } }
+];
+
+const tasks = [
+  {
+    n: 1, type: "dialogue",
+    title: { ru: "Задание 1. Диалог", en: "Task 1. Dialogue", uz: "1-topshiriq. Dialog" },
+    maxScore: 2,
+    text: {
+      ru: "Ответь на вопросы:\n1) Сколько тебе лет?\n2) Где ты живёшь? Назови свой адрес.",
+      en: "Answer the questions:\n1) How old are you?\n2) Where do you live? Name your address.",
+      uz: "Savollarga javob bering:\n1) Necha yoshdasan?\n2) Qayerda yashaysan? Manzilingni ayt."
+    },
+    info: {
+      ru: "Критерии:\n• Д1 — ответ на первый вопрос (1 балл). Например: «Семь лет», «Семь».\n• Д2 — ответ на второй вопрос (1 балл). Например: «В Москве», «Улица Ленина, дом 5».\n\nДопускаются односложные ответы. Если ответ не конкретный (например, «Много» на вопрос о возрасте) — 0 баллов.",
+      en: "Criteria:\n• D1 — answer to question 1 (1 point).\n• D2 — answer to question 2 (1 point).\n\nOne-word answers are allowed. If the answer is not specific — 0 points.",
+      uz: "Mezonlar:\n• D1 — birinchi savolga javob (1 ball). Masalan: «Yetti yoshda», «Yetti».\n• D2 — ikkinchi savolga javob (1 ball). Masalan: «Moskvada», «Lenin ko'chasi, 5-uy».\n\nBir so'zli javoblarga ruxsat beriladi. Agar javob aniq bo'lmasa (masalan, yosh haqidagi savolga «Ko'p») — 0 ball."
+    },
+    subScores: [
+      { key: "d1", label: { ru: "Д1 — ответ на 1-й вопрос", en: "D1 — answer to Q1", uz: "D1 — 1-savolga javob" }, max: 1 },
+      { key: "d2", label: { ru: "Д2 — ответ на 2-й вопрос", en: "D2 — answer to Q2", uz: "D2 — 2-savolga javob" }, max: 1 }
+    ]
+  },
+  {
+    n: 2, type: "monologue",
+    title: { ru: "Задание 2. Монолог по фотографии", en: "Task 2. Monologue by photo", uz: "2-topshiriq. Surat bo'yicha monolog" },
+    maxScore: 3,
+    text: {
+      ru: "Рассмотри фотографию (воспитательница и двое детей рисуют красками).\n\nОтветь на вопросы:\n1) Кого ты видишь на фотографии?\n2) Что они делают?\n3) Какое у них настроение?",
+      en: "Look at the photo (teacher and two children painting).\n\nAnswer the questions:\n1) Who do you see in the photo?\n2) What are they doing?\n3) What is their mood?",
+      uz: "Suratni ko'rib chiqing (tarbiyachi va ikki bola bo'yoq bilan rasm chizishyapti).\n\nSavollarga javob bering:\n1) Suratda kimni ko'ryapsan?\n2) Ular nima qilishyapti?\n3) Ularning kayfiyati qanday?"
+    },
+    info: {
+      ru: "Критерии:\n• М1 — ответ на 1-й вопрос (1 балл). Например: мальчика, девочку, воспитательницу.\n• М2 — ответ на 2-й вопрос (1 балл). Например: рисуют / рисуют красками.\n• М3 — ответ на 3-й вопрос (1 балл). Например: хорошее / весёлое / радостное.\n\nЕсли ответ не по фотографии — 0 баллов.",
+      en: "Criteria:\n• M1 — answer to Q1 (1 point).\n• M2 — answer to Q2 (1 point).\n• M3 — answer to Q3 (1 point).\n\nIf the answer does not match the photo — 0 points.",
+      uz: "Mezonlar:\n• M1 — 1-savolga javob (1 ball). Masalan: bolani, qizni, tarbiyachini.\n• M2 — 2-savolga javob (1 ball). Masalan: rasm chizishyapti / bo'yoq bilan rasm chizishyapti.\n• M3 — 3-savolga javob (1 ball). Masalan: yaxshi / quvnoq / xursand.\n\nAgar javob suratga mos kelmasa — 0 ball."
+    },
+    subScores: [
+      { key: "m1", label: { ru: "М1 — ответ на 1-й вопрос", en: "M1 — answer to Q1", uz: "M1 — 1-savolga javob" }, max: 1 },
+      { key: "m2", label: { ru: "М2 — ответ на 2-й вопрос", en: "M2 — answer to Q2", uz: "M2 — 2-savolga javob" }, max: 1 },
+      { key: "m3", label: { ru: "М3 — ответ на 3-й вопрос", en: "M3 — answer to Q3", uz: "M3 — 3-savolga javob" }, max: 1 }
+    ]
+  },
+  {
+    n: 3, type: "listening",
+    title: { ru: "Задание 3. Слушание", en: "Task 3. Listening", uz: "3-topshiriq. Tinglash" },
+    maxScore: 2,
+    text: {
+      ru: "Прослушай текст дважды:\n\n«Важно знать правила дорожного движения. Если нет светофора, нужно найти пешеходный переход. При переходе дороги всегда смотрите по сторонам.» (19 слов)\n\nОтветь на вопросы:\n1) Где можно переходить дорогу, если нет светофора?\n2) Что нужно делать, когда переходим дорогу?",
+      en: "Listen to the text twice:\n\n«It is important to know traffic rules. If there is no traffic light, find a pedestrian crossing. When crossing the road, always look both ways.» (19 words)\n\nAnswer the questions:\n1) Where can you cross the road if there is no traffic light?\n2) What should you do when crossing the road?",
+      uz: "Matnni ikki marta tinglang:\n\n«Yo'l harakati qoidalarini bilish muhim. Agar svetofor bo'lmasa, piyodalar o'tish joyini topish kerak. Yo'lni kesib o'tayotganda har doim atrofga qarang.» (19 so'z)\n\nSavollarga javob bering:\n1) Svetofor bo'lmasa, yo'lni qayerdan kesib o'tish mumkin?\n2) Yo'lni kesib o'tayotganda nima qilish kerak?"
+    },
+    info: {
+      ru: "Критерии:\n• С1 — ответ на 1-й вопрос (1 балл). Например: по пешеходному переходу / по переходу.\n• С2 — ответ на 2-й вопрос (1 балл). Например: смотреть по сторонам / быть внимательными.\n\nЕсли ответ не по тексту — 0 баллов.",
+      en: "Criteria:\n• S1 — answer to Q1 (1 point).\n• S2 — answer to Q2 (1 point).\n\nIf the answer does not match the text — 0 points.",
+      uz: "Mezonlar:\n• S1 — 1-savolga javob (1 ball). Masalan: piyodalar o'tish joyidan / o'tish joyidan.\n• S2 — 2-savolga javob (1 ball). Masalan: atrofga qarash / ehtiyot bo'lish.\n\nAgar javob matnga mos kelmasa — 0 ball."
+    },
+    subScores: [
+      { key: "s1", label: { ru: "С1 — ответ на 1-й вопрос", en: "S1 — answer to Q1", uz: "S1 — 1-savolga javob" }, max: 1 },
+      { key: "s2", label: { ru: "С2 — ответ на 2-й вопрос", en: "S2 — answer to Q2", uz: "S2 — 2-savolga javob" }, max: 1 }
+    ]
+  },
+  {
+    n: 4, type: "vocab",
+    title: { ru: "Задание 4. Лексика и грамматика", en: "Task 4. Vocabulary and grammar", uz: "4-topshiriq. Leksika va grammatika" },
+    maxScore: 3,
+    text: {
+      ru: "Рассмотри картинки (стол, карандаши, рубашка). Назови каждый предмет и его признак.\n\nПример: стол — деревянный; карандаши — острые; рубашка — новая.",
+      en: "Look at the pictures (table, pencils, shirt). Name each object and its feature.\n\nExample: table — wooden; pencils — sharp; shirt — new.",
+      uz: "Rasmlarni ko'rib chiqing (stol, qalamlar, ko'ylak). Har bir buyumni va uning belgisini nomlang.\n\nMisol: stol — yog'ochdan; qalamlar — o'tkir; ko'ylak — yangi."
+    },
+    info: {
+      ru: "Критерии:\n• ЛГ1 — название 1-го предмета и его признак (1 балл).\n• ЛГ2 — название 2-го предмета и его признак (1 балл).\n• ЛГ3 — название 3-го предмета и его признак (1 балл).\n\nЕсли ответ не по картинке — 0 баллов.",
+      en: "Criteria:\n• LG1 — name of object 1 and its feature (1 point).\n• LG2 — name of object 2 and its feature (1 point).\n• LG3 — name of object 3 and its feature (1 point).\n\nIf the answer does not match the picture — 0 points.",
+      uz: "Mezonlar:\n• LG1 — 1-buyum nomi va uning belgisi (1 ball).\n• LG2 — 2-buyum nomi va uning belgisi (1 ball).\n• LG3 — 3-buyum nomi va uning belgisi (1 ball).\n\nAgar javob rasmga mos kelmasa — 0 ball."
+    },
+    subScores: [
+      { key: "lg1", label: { ru: "ЛГ1 — предмет 1 + признак", en: "LG1 — object 1 + feature", uz: "LG1 — 1-buyum + belgisi" }, max: 1 },
+      { key: "lg2", label: { ru: "ЛГ2 — предмет 2 + признак", en: "LG2 — object 2 + feature", uz: "LG2 — 2-buyum + belgisi" }, max: 1 },
+      { key: "lg3", label: { ru: "ЛГ3 — предмет 3 + признак", en: "LG3 — object 3 + feature", uz: "LG3 — 3-buyum + belgisi" }, max: 1 }
+    ]
+  }
+];
+
+/* RENDER */
+function renderStructureCards() {
+  document.getElementById("structureGrid").innerHTML = structureCards.map(card => {
+    const body = card.items ? `<ul class="mini-list">${card.items.map(it => `<li>${escapeHtml(loc(it))}</li>`).join("")}</ul>` : "";
+    return `<article class="card ${card.cardClass}">
+      <span class="tag ${card.tagClass}">${escapeHtml(loc(card.tag))}</span>
+      <h3>${escapeHtml(loc(card.title))}</h3>${body}
+    </article>`;
+  }).join("");
+}
+
+function renderTopicsCards() {
+  const L = I18N[currentLang];
+  document.getElementById("topicsGrid").innerHTML = topicsCards.map(t => {
+    const studied = topicsState[t.key] ? "studied" : "";
+    const btnLabel = topicsState[t.key] ? L.studiedLabel : L.markTopic;
+    return `<article class="card topic-card ${studied}">
+      <h3>${escapeHtml(loc(t.title))}</h3>
+      <p>${escapeHtml(loc(t.text))}</p>
+      <button class="btn small" onclick="toggleTopic('${t.key}')">${escapeHtml(btnLabel)}</button>
+    </article>`;
+  }).join("");
+}
+
+function renderChecklist() {
+  document.getElementById("checklistUl").innerHTML = checklistItems.map(item => {
+    const checked = checklistState[item.key] ? "checked" : "";
+    const done = checklistState[item.key] ? "done" : "";
+    return `<li class="check-item ${done}">
+      <input type="checkbox" id="${item.key}" data-key="${item.key}" ${checked} />
+      <label for="${item.key}">${escapeHtml(loc(item.label))}</label>
+    </li>`;
+  }).join("");
+}
+
+function renderPlan() {
+  const L = I18N[currentLang];
+  document.getElementById("planGrid").innerHTML = planDays.map(d => `
+    <div class="day ${d.critical ? "critical" : ""}">
+      <b>${escapeHtml(L.dayPrefix)} ${d.day}</b>
+      <p>${escapeHtml(loc(d.text))}</p>
+    </div>
+  `).join("");
+}
+
+function renderReferences() {
+  const L = I18N[currentLang];
+  document.getElementById("refsGrid").innerHTML = `
+    <div class="card success-card">
+      <h3>${escapeHtml(L.refCriteriaTitle)}</h3>
+      <table class="reference-table">
+        <tr><th>${escapeHtml(L.refTask)}</th><th>${escapeHtml(L.refMaxScore)}</th></tr>
+        <tr><td>${escapeHtml(L.refDialog)}</td><td>2</td></tr>
+        <tr><td>${escapeHtml(L.refMono)}</td><td>3</td></tr>
+        <tr><td>${escapeHtml(L.refListen)}</td><td>2</td></tr>
+        <tr><td>${escapeHtml(L.refVocab)}</td><td>3</td></tr>
+        <tr><td><strong>${escapeHtml(L.refTotal)}</strong></td><td><strong>10</strong></td></tr>
+      </table>
+    </div>
+    <div class="card danger-card">
+      <h3>${escapeHtml(L.refScaleTitle)}</h3>
+      <table class="reference-table">
+        <tr><th>${escapeHtml(L.refScore)}</th><th>${escapeHtml(L.refResult)}</th></tr>
+        <tr><td>9–10</td><td>${escapeHtml(L.refPass)}</td></tr>
+        <tr><td>0–8</td><td>${escapeHtml(L.refFail)}</td></tr>
+      </table>
+    </div>
+    <div class="card warn-card">
+      <h3>${escapeHtml(L.refDistTitle)}</h3>
+      <table class="reference-table">
+        <tr><th>${escapeHtml(L.refSection)}</th><th>${escapeHtml(L.refTaskCol)}</th></tr>
+        <tr><td>${escapeHtml(L.refSpeaking)}</td><td>${escapeHtml(L.refSpeakingTasks)}</td></tr>
+        <tr><td>${escapeHtml(L.refListening)}</td><td>${escapeHtml(L.refListeningTask)}</td></tr>
+        <tr><td>${escapeHtml(L.refVocabSection)}</td><td>${escapeHtml(L.refVocabTask)}</td></tr>
+      </table>
+    </div>
+  `;
+
+  // Rules list
+  document.getElementById("refRulesList").innerHTML =
+    [L.rule1, L.rule2, L.rule3, L.rule4, L.rule5].map(r => `<li>${r}</li>`).join("");
+
+  // Words table
+  const rows = [
+    [L.wordsFamily, "мама, папа, брат, сестра, бабушка, дедушка"],
+    [L.wordsHouse, "стол, стул, окно, дверь, кровать"],
+    [L.wordsClothes, "рубашка, платье, брюки, куртка, шапка"],
+    [L.wordsFood, "хлеб, молоко, яблоко, суп, каша"],
+    [L.wordsAnimals, "кошка, собака, корова, лошадь, птица"],
+    [L.wordsColors, "красный, синий, зелёный, жёлтый, белый"],
+    [L.wordsFeatures, "большой, маленький, новый, старый, красивый"]
+  ];
+  document.getElementById("wordsTable").innerHTML =
+    `<tr><th>${escapeHtml(L.wordsTopic)}</th><th>${escapeHtml(L.wordsExamples)}</th></tr>` +
+    rows.map(([a, b]) => `<tr><td>${escapeHtml(a)}</td><td>${escapeHtml(b)}</td></tr>`).join("");
+}
+
+function renderTasks() {
+  const container = document.getElementById("tasksContainer");
+  const L = I18N[currentLang];
+  container.innerHTML = tasks.map(t => {
+    const tr = t.title;
+    const tt = t.text;
+    const ti = t.info;
+    const subScoresHtml = t.subScores.map(s => `
+      <div class="self-check" data-task="${t.n}" data-key="${s.key}">
+        <span class="score-label">${escapeHtml(loc(s.label))} (${escapeHtml(L.maxWord)} ${s.max})</span>
+        ${[1, 0].map(score => `
+          <div class="score-row">
+            <input type="radio" name="score-${t.n}-${s.key}" id="score-${t.n}-${s.key}-${score}" value="${score}" data-task="${t.n}" data-key="${s.key}" />
+            <label for="score-${t.n}-${s.key}-${score}">${score === 1 ? escapeHtml(L.scoreYes) : escapeHtml(L.scoreNo)}</label>
+          </div>
+        `).join("")}
+      </div>
+    `).join("");
+    return `
+      <article class="task-block">
+        <span class="task-number">${escapeHtml(loc(tr))} • ${escapeHtml(L.selfScoreLabel)}</span>
+        <div class="task-label">${escapeHtml(L.taskWord)} ${t.n} — ${escapeHtml(L.maxWord)} ${t.maxScore} ${escapeHtml(L.pointsWord)}</div>
+        <div class="task-text">${escapeHtml(loc(tt))}</div>
+        <div class="task-info">${escapeHtml(loc(ti)).replace(/\n/g, "<br/>")}</div>
+        ${subScoresHtml}
+        <div class="task-total" id="task-total-${t.n}">${escapeHtml(L.taskTotal)}: 0 / ${t.maxScore}</div>
+      </article>
+    `;
+  }).join("");
+  updateAllTotals();
+  updateSummary();
+}
+
+function getTaskScore(task) {
+  let sum = 0;
+  task.subScores.forEach(s => {
+    const checked = document.querySelector(`input[name="score-${task.n}-${s.key}"]:checked`);
+    if (checked) sum += parseInt(checked.value, 10);
+  });
+  return sum;
+}
+
+function updateTaskTotal(task) {
+  const sum = getTaskScore(task);
+  const box = document.getElementById("task-total-" + task.n);
+  const L = I18N[currentLang];
+  if (box) box.textContent = `${L.taskTotal}: ${sum} / ${task.maxScore}`;
+}
+
+function updateAllTotals() {
+  tasks.forEach(t => updateTaskTotal(t));
+}
+
+function getTotalScore() {
+  return tasks.reduce((acc, t) => acc + getTaskScore(t), 0);
+}
+
+function updateSummary() {
+  const box = document.getElementById("summaryBox");
+  const L = I18N[currentLang];
+  const total = getTotalScore();
+  const maxTotal = tasks.reduce((acc, t) => acc + t.maxScore, 0);
+  const assessed = tasks.filter(t => {
+    return t.subScores.every(s => document.querySelector(`input[name="score-${t.n}-${s.key}"]:checked`));
+  }).length;
+
+  document.getElementById("answeredCount").textContent = assessed + "/" + tasks.length;
+  document.getElementById("totalScore").textContent = total;
+  document.getElementById("overall").value = Math.round((total / maxTotal) * 100);
+
+  let verdict;
+  if (assessed < tasks.length) verdict = L.verdictWait;
+  else if (total >= 9) verdict = L.verdictPass;
+  else verdict = L.verdictFail;
+  document.getElementById("verdictLabel").textContent = assessed < tasks.length ? "—" : (total >= 9 ? "✅" : "❌");
+
+  box.innerHTML = `
+    <div class="summary-box">
+      <div class="score">${total} / ${maxTotal}</div>
+      <p style="margin:8px 0;font-weight:800;">${escapeHtml(verdict)}</p>
+      <p style="color:var(--muted);margin:0;">${escapeHtml(L.summaryProgress)}: ${assessed} / ${tasks.length}</p>
+      <p style="color:var(--muted);margin:6px 0 0;font-size:13px;">${escapeHtml(L.summaryScale)}</p>
+    </div>`;
+}
+
+function applyUIText() {
+  const L = I18N[currentLang];
+  document.title = L.docTitle;
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (L[key] != null) el.innerHTML = L[key];
+  });
+}
+
+function renderAll() {
+  renderStructureCards();
+  renderTopicsCards();
+  renderTasks();
+  renderReferences();
+  renderChecklist();
+  renderPlan();
+  updateAllTotals();
+  updateSummary();
+}
+
+function toggleTopic(key) {
+  topicsState[key] = !topicsState[key];
+  renderTopicsCards();
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem(STORAGE.lang, lang);
+  document.querySelectorAll(".lang-option").forEach(sp => sp.classList.toggle("active", sp.dataset.lang === lang));
+  applyUIText();
+  renderAll();
+}
+
+function cycleLang() {
+  const idx = LANGS.indexOf(currentLang);
+  setLang(LANGS[(idx + 1) % LANGS.length]);
+}
+
+function resetAll() {
+  const msg = currentLang === "ru" ? "Сбросить все ответы?"
+    : currentLang === "en" ? "Reset all answers?"
+    : "Barcha javoblarni tozalashni xohlaysizmi?";
+  if (!confirm(msg)) return;
+  document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
+  topicsState = {};
+  checklistState = {};
+  renderTopicsCards();
+  renderChecklist();
+  updateAllTotals();
+  updateSummary();
+}
+
+/* ТАЙМЕР 15 МИНУТ */
+let timerTotal = 15 * 60, timerRemaining = timerTotal, timerInterval = null, timerRunning = false;
+function formatTime(sec) {
+  const m = Math.floor(sec / 60), s = sec % 60;
+  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+}
+function updateTimerDisplay() {
+  const display = document.getElementById("timerDisplay");
+  const widget = document.getElementById("timerWidget");
+  display.textContent = formatTime(timerRemaining);
+  widget.classList.toggle("warning", timerRemaining <= 180 && timerRemaining > 60);
+  widget.classList.toggle("danger", timerRemaining <= 60);
+}
+function updateTimerButton() {
+  const btn = document.getElementById("timerToggle");
+  btn.textContent = timerRunning ? "⏸" : "▶";
+}
+function stopTimer() { timerRunning = false; if (timerInterval) clearInterval(timerInterval); timerInterval = null; updateTimerButton(); }
+function startTimer() {
+  if (timerRunning || timerRemaining <= 0) return;
+  timerRunning = true;
+  timerInterval = setInterval(() => {
+    if (timerRemaining > 0) { timerRemaining--; updateTimerDisplay(); }
+    if (timerRemaining === 0) { stopTimer(); alert(I18N[currentLang].timerUp); }
+  }, 1000);
+  updateTimerButton();
+}
+function toggleTimer() { timerRunning ? stopTimer() : startTimer(); }
+function resetTimer() { stopTimer(); timerRemaining = timerTotal; updateTimerDisplay(); }
+
+function copyPhone() {
+  const phone = "89202275676";
+  const status = document.getElementById("copyStatus");
+  const L = I18N[currentLang];
+  const show = () => { status.textContent = L.copied; setTimeout(() => status.textContent = "", 2500); };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(phone).then(show).catch(() => fallbackCopy(phone, show));
+  } else fallbackCopy(phone, show);
+}
+function fallbackCopy(text, cb) {
+  const t = document.createElement("textarea");
+  t.value = text; t.style.position = "fixed"; t.style.opacity = "0";
+  document.body.appendChild(t); t.focus(); t.select();
+  try { document.execCommand("copy"); cb(); } catch (e) { alert("Copy failed: " + text); }
+  document.body.removeChild(t);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadAll();
+  applyTheme();
+
+  // Установить активный язык в кнопке
+  document.querySelectorAll(".lang-option").forEach(sp => {
+    sp.classList.toggle("active", sp.dataset.lang === currentLang);
+  });
+
+  applyUIText();
+  renderAll();
+  updateTimerDisplay();
+
+  document.getElementById("themeToggle").addEventListener("click", toggleTheme);
+  document.getElementById("langToggle").addEventListener("click", cycleLang);
+  document.getElementById("timerToggle").addEventListener("click", toggleTimer);
+  document.getElementById("timerReset").addEventListener("click", resetTimer);
+
+  document.getElementById("tasksContainer").addEventListener("change", e => {
+    if (e.target.matches("input[type='radio'][data-task]")) {
+      updateAllTotals();
+      updateSummary();
+    }
+  });
+  document.getElementById("checklistUl").addEventListener("change", e => {
+    if (e.target.matches("input[type='checkbox']")) {
+      const key = e.target.dataset.key;
+      checklistState[key] = e.target.checked;
+      const li = e.target.closest(".check-item");
+      if (li) li.classList.toggle("done", e.target.checked);
+    }
+  });
+});
+</script>
+</body>
+</html>
